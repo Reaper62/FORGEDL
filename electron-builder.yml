@@ -1,0 +1,29 @@
+appId: com.amkon.ytdlpgui
+productName: FORGERDL
+directories:
+  output: release
+  buildResources: resources
+files:
+  - dist
+  - dist-electron
+  - package.json
+extraResources:
+  - from: bin
+    to: bin
+    filter:
+      - '*.exe'
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: zip
+      arch:
+        - x64
+  icon: resources/icons/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: FORGERDL
